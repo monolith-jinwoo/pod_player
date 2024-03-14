@@ -31,7 +31,7 @@ class _PodBaseController extends GetxController {
 
   bool? wasVideoPlayingOnUiDispose;
 
-  int doubleTapForwardSeconds = 10;
+  int doubleTapForwardSeconds = 1;
   String? playingVideoUrl;
 
   late BuildContext mainContext;
@@ -96,8 +96,7 @@ class _PodBaseController extends GetxController {
       update(['video-progress']);
       update(['update-all']);
     } else {
-      if (_videoPosition.inSeconds !=
-          (_videoCtr?.value.position ?? Duration.zero).inSeconds) {
+      if (_videoPosition.inSeconds != (_videoCtr?.value.position ?? Duration.zero).inSeconds) {
         _videoPosition = _videoCtr?.value.position ?? Duration.zero;
         update(['video-progress']);
         update(['update-all']);
